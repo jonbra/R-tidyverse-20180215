@@ -1,0 +1,123 @@
+---
+title: "R tidyverse workshop"
+author: "Carpentry@UiO"
+date: "15 and 22 February 2018"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    logo: fig/logo.png
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Tools > Global Options | General and Git
+
+```{r, out.width = "40%"}
+knitr::include_graphics("fig/1_rstudio.PNG", auto_pdf = TRUE, dpi = NULL)
+
+knitr::include_graphics("fig/4_rstudio.PNG", auto_pdf = TRUE, dpi = NULL)
+
+```
+
+Uncheck saving of `.Rdata` files and make sure Rstudio can see git.
+
+## Tools > Global Options | Appearance and Layout
+
+```{r, out.width = "40%"}
+knitr::include_graphics("fig/2_rstudio.PNG", auto_pdf = TRUE, dpi = NULL)
+
+knitr::include_graphics("fig/3_rstudio.PNG", auto_pdf = TRUE, dpi = NULL)
+
+```
+
+Here you can control the panel layout and appearance of text
+
+## Initialize new repo | git init
+
+```{r, out.width = "80%"}
+knitr::include_graphics("fig/5_git.PNG", auto_pdf = TRUE, dpi = NULL)
+
+knitr::include_graphics("fig/6_git.PNG", auto_pdf = TRUE, dpi = NULL)
+
+```
+
+After repository is initialized, new Rstudio tab will appear
+
+## Stage and commit | git add & git commit
+
+```{r, out.width = "80%"}
+knitr::include_graphics("fig/7_git.PNG", auto_pdf = TRUE, dpi = NULL)
+
+knitr::include_graphics("fig/8_git.PNG", auto_pdf = TRUE, dpi = NULL)
+
+```
+
+Provide meaningful commit message
+
+## Github | new repository
+
+```{r, out.width = "80%"}
+knitr::include_graphics("fig/10_github.PNG", auto_pdf = TRUE, dpi = NULL)
+```
+
+Create new repository and give it a good name
+
+## Github | copy address
+
+```{r, out.width = "80%"}
+knitr::include_graphics("fig/11_github.PNG", auto_pdf = TRUE, dpi = NULL)
+```
+
+Copy URL to your new repo (HTTPS or SSH) and head over to Rstudio
+
+## Adding remote | connecting git to github
+
+Click **New Branch** button in Rstudio and add a link to *remote*
+
+```{r, out.width = "40%"}
+knitr::include_graphics("fig/12_git.PNG", auto_pdf = TRUE, dpi = NULL)
+```
+
+After this in **Terminal** type `git push -u origin master`
+Rstudio will bring up authentication dialogue and upload the repo
+
+## Success 
+
+If everything went well you should see something similar
+
+```{r, out.width = "80%"}
+knitr::include_graphics("fig/14_git.PNG", auto_pdf = TRUE, dpi = NULL)
+```
+
+The repo is located at https://github.com/dmi3kno/R-tidyverse-20180215
+
+## Now what?
+
+- Log in to github with your github credentials
+- Go to https://github.com/dmi3kno/R-tidyverse-20180215
+- Click **Fork** (upper right). 
+- Make sure you are in your own account and click green **Clone or download** button
+- Use this URL to create new project in your Rstudio. In Rstudio click `New project > Version Control > Git` and paste the URL
+
+## What's next? | github collaboration workflow
+
+Objective is to use this repo as a template, commit changes and push back to github. 
+
+```{r, out.width = "40%"}
+knitr::include_graphics("fig/clone.png", auto_pdf = TRUE, dpi = NULL)
+```
+
+At the end of the workshop we will try to fetch the changes upstream ("sync the fork"), resolve conflicts, push the repo and suggest revisions back to the original maintainer (me) in a Pull request.
+
+
+## End of workshop | github collaboration workflow
+
+A few steps left:
+
+- Add new remote called "upstream" using New Branch > Remote buttons
+- In Terminal, call `git fetch remote`
+- Make sure you are still on `master` branch
+- `git merge upstream/master`
